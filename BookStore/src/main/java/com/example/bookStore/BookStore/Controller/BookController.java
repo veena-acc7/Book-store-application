@@ -1,7 +1,10 @@
 package com.example.bookStore.BookStore.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,6 +24,10 @@ public class BookController {
 	 @PostMapping("/addBook")
 	    private ResponseEntity<Books> saveBook(@RequestBody Books book){
 	        return ResponseEntity.ok().body(this.bookService.addBook(book));
+	    }
+	 @GetMapping("/getBooks")
+	    private ResponseEntity<List<Books>> getUsers(){
+	        return ResponseEntity.ok().body(this.bookService.getBooks());
 	    }
 
 //	    @PutMapping("/user/{user_id}")

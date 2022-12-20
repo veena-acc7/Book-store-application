@@ -8,6 +8,7 @@ import com.example.bookStore.BookStore.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -22,6 +23,11 @@ public class BookServiceImpl implements BookService{
     @Override
     public Books addBook(Books book){
         return bookRepository.save(book);
+    }
+    
+    @Override
+    public List<Books> getBooks(){
+    	return this.bookRepository.findAll();
     }
     
     @Override

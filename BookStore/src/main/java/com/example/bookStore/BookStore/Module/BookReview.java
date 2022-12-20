@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name="bookreview")
 public class BookReview {
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	@Column(name="reviewId")
 	long reviewId;
@@ -28,7 +28,8 @@ public class BookReview {
 	
 	@Column(name="review")
 	String review;
-
+	@Column(name="likes")
+	int likes;
 	public long getBookId() {
 		return bookId;
 	}

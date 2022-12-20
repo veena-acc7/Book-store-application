@@ -21,6 +21,11 @@ public class UserController {
     private ResponseEntity<User> saveUser(@RequestBody User user){
         return ResponseEntity.ok().body(this.userService.createUser(user));
     }
+    
+    @GetMapping("/getUsers")
+    private ResponseEntity<List<User>> getUsers(){
+        return ResponseEntity.ok().body(this.userService.getUsers());
+    }
 
     @PutMapping("/user/{user_id}")
     private ResponseEntity<User> updateUser(@PathVariable int user_id, @RequestBody User user){

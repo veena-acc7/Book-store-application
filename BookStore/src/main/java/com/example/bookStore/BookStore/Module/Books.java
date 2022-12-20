@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Books {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long bookId;
 
     @Column(name = "bookCode")
@@ -32,7 +32,7 @@ public class Books {
         return bookId;
     }
 
-    public void setBookId(int bookId) {
+    public void setBookId(long bookId) {
         this.bookId = bookId;
     }
 

@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 public class User {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   long user_id;
 
   @Column(name = "first_name")
@@ -27,7 +27,17 @@ public class User {
 
   @Column(name = "is_suspended")
   int is_suspended;
+  @Column(name="booksBorrowed")
+  int booksBorrowed;
   
+public int getBooksBorrowed() {
+	return booksBorrowed;
+}
+
+public void setBooksBorrowed(int booksBorrowed) {
+	this.booksBorrowed = booksBorrowed;
+}
+
 //  
 //  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = false)
 //  private List<BookReview> listAuthorities = new ArrayList<>();
